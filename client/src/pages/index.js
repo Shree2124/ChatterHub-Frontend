@@ -1,6 +1,8 @@
-import Home from "./Home";
+import Home from "./Home.jsx";
+import NotFound from './NotFound.jsx'
 
 
 export {
-    Home
+    Home,
+    NotFound
 }
