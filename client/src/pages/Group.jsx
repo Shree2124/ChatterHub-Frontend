@@ -60,8 +60,8 @@ const GroupsList = ({ w = "100%", myGroups = [], chatId }) => {
     <>
       <Stack width={w} 
         sx={{
-          backgroundImage: bgGradient,
-          height:"100%"
+          overflow: "auto",
+          backgroundImage: bgGradient
         }}
       >
         {myGroups.length > 0 ? (
@@ -260,10 +260,10 @@ function Group() {
               xs: "none",
               sm: "block",
             },
-            backgroundImage: bgGradient,
-            color: "white"
+            height: "100vh"
           }}
           sm={4}
+          overflow={"auto"}
         >
           <GroupsList myGroups={sampleChats} chatId={chatId} />
         </Grid>
@@ -304,6 +304,7 @@ function Group() {
                 spacing={"2rem"}
                 height={"50vh"}
                 overflow={"auto"}
+                
               >
                 {/* GroupMembers */}
                 {sampleUser.map((i) => (
@@ -346,7 +347,7 @@ function Group() {
             display: {
               xs: "block",
               sm: "none",
-            }
+            },
           }}
           open={isMobileMenuOpen}
           onClose={handleMobileClose}

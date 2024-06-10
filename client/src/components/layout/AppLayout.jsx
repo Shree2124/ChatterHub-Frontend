@@ -32,6 +32,7 @@ const AppLayout = () => (WrappedComponent) => {
             md={3}
             sx={{
               display: { xs: "none", sm: "block" },
+              
             }}
             height={"100%"}
           >
