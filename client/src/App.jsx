@@ -2,6 +2,8 @@ import React, { Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ProtectRoute from "./components/auth/ProtectRoute.jsx";
 import LayoutLoader from "./components/layout/Loaders.jsx";
+import AdminLogin from "./pages/Admin/AdminLogin.jsx";
+import Dashboard from "./pages/Admin/Dashboard.jsx";
 
 
 const Home = lazy(() => import("./pages/Home.jsx"));
@@ -30,6 +32,8 @@ function App() {
             </ProtectRoute>
           }
         />
+        <Route path="/admin" element={<AdminLogin/>}></Route>
+        <Route path="/admin/dashboard" element={<Dashboard/>}></Route>
         <Route path="*" element={<NotFound/>}/>
       </Routes>
     </Suspense>
