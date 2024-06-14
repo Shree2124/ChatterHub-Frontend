@@ -1,12 +1,12 @@
 import React from 'react'
 import AdminLayout from '../../components/layout/AdminLayout'
 
-const ChatManagement = () => {
+const MessageManagement = () => {
   return (
     <AdminLayout>
-      Chat MAnage
+      Msg
     </AdminLayout>
   )
 }
 
-export default ChatManagement
+export default MessageManagement

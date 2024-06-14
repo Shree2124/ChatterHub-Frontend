@@ -41,17 +41,17 @@ const adminTabs = [
   },
   {
     name: "User",
-    path: "/admin/user-management",
+    path: "/admin/users",
     icon: <ManageAccounts />,
   },
   {
     name: "Groups",
-    path: "/admin/group-management",
+    path: "/admin/groups",
     icon: <Group />,
-  },
+  },  
   {
     name: "Messages",
-    path: "/admin/message-management",
+    path: "/admin/messages",
     icon: <Message />,
   },
 ];
