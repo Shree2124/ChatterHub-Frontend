@@ -8,7 +8,7 @@ import {
   Tooltip,
   Typography,
 } from "@mui/material";
-import { Menu as MenuIcon, Search as SearchIcon, Add, Group, Logout, Notifications } from "@mui/icons-material";
+import { Menu as MenuIcon, Search as SearchIcon, Add, Group, Logout, Notifications, Dashboard } from "@mui/icons-material";
 import { orange } from "../../constants/colors.js";
 import { useNavigate } from "react-router-dom";
 import React, { Suspense, useState } from "react";
@@ -51,6 +51,9 @@ function Header() {
   const handleLogout = () => {};
   const hadleNotification = () => {
     setIsNotification((prev)=>!prev)
+  };
+  const hadleDashboard=()=>{
+    navigate("/admin/dashboard")
   };
   const navigateToGroup = () => navigate("/groups");
 
@@ -98,6 +101,11 @@ function Header() {
               title="Notification"
               icon={<Notifications />}
               onClick={hadleNotification}
+            />
+            <IconBtn
+              title="Admin Dashboard"
+              icon={<Dashboard />}
+              onClick={hadleDashboard}
             />
           <IconBtn
             title="Logout"

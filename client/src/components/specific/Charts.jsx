@@ -11,6 +11,7 @@ import {
   Chart as ChartJS,
   plugins,
 } from "chart.js";
+import { getLast7Days } from "../../lib/features.js";
 
 ChartJS.register(
   CategoryScale,
@@ -21,6 +22,8 @@ ChartJS.register(
   LineElement,
   ArcElement
 );
+
+const labels = getLast7Days();
 
 const lineChartOptions = {
   responsive: true,
@@ -48,43 +51,50 @@ const lineChartOptions = {
   },
 };
 
-const LineChart = () => {
+const LineChart = ({ value = [] }) => {
   const data = {
-    labels: [
-      "Jan",
-      "Feb",
-      "March",
-      "Apr",
-      "May",
-      "June",
-      "July",
-      "Aug",
-      "Sep",
-      "Oct",
-      "Nov",
-      "Dec",
-    ],
+    labels,
     datasets: [
       {
-        data: [1, 2, 34],
+        data: value,
         label: "Revenue",
         fill: false,
         backgroundColor: "rgba(75,192,192,1)",
         borderColor: "rgba(75,192,192,0.3)",
       },
-      {
-        data: [2, 1, 3, 35],
-        label: "Revenue 2",
-        fill: false,
-        backgroundColor: "rgba(15,15,142,1)",
-        borderColor: "rgba(15,15,142,0.3)",
-      },
     ],
   };
   return <Line data={data} options={lineChartOptions}></Line>;
 };
-const DoughnutChart = () => {
-  return <div></div>;
+
+
+const doughnutChartOptions={
+  responsive: true,
+  plugins: {
+    legend: {
+      display: false
+    },
+  },
+  cutout: 120,
+}
+
+const DoughnutChart = ({ value = [], labels=[] }) => {
+  const data = {
+    labels,
+    datasets: [
+      {
+        data: value,
+        fill: false,
+        backgroundColor: ["#3BCEAC", "#7E78D2"],
+
+        borderColor: ["#0EAD69", "#6449cf"],
+        offset: 20
+      },
+    ],
+  };
+  return <Doughnut style={{
+    zIndex: 8
+  }} data={data} options={doughnutChartOptions}></Doughnut>;
 };
 
 export { LineChart, DoughnutChart };

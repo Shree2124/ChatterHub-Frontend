@@ -56,14 +56,14 @@ const adminTabs = [
   },
 ];
 
-const SideBar = ({ w = "100%" }) => {
+const SideBar = ({ w = "100%", bgcolor="", h=""}) => {
   const isAdmin = true;
   const location = useLocation();
   const logoutHandler = ()=>{console.log("Logout");};
   if(!isAdmin) return <Navigate to="/admin" />;
   return (
     <>
-      <Stack width={w} direction={"column"} p={"3rem"} spacing={"3rem"}>
+      <Stack width={w} bgcolor={bgcolor} position={"fixed"} height={h} direction={"column"} p={"3rem"} spacing={"3rem"}>
         <Typography variant="h5" textTransform={"uppercase"}>
           Admin
         </Typography>
@@ -124,22 +124,25 @@ const AdminLayout = ({ children }) => {
             {isMobile ? <Close /> : <Menu />}
           </IconButton>
         </Box>
+        
+
         <Grid item md={4} lg={3} sx={{ display: { xs: "none", md: "block" } }}>
           <SideBar />
         </Grid>
+        
         <Grid
           item
           xs={12}
           md={8}
           lg={9}
           sx={{
-            bgcolor: "#f5f5f5",
+            bgcolor: "#f5f5f5 !important",
           }}
         >
           {children}
         </Grid>
         <Drawer open={isMobile} onClose={handleClose}>
-          <SideBar w="50vw" />
+          <SideBar w="50vw" bgcolor="#f5f5f5" h="100%"/>
         </Drawer>
       </Grid>
     </div>
