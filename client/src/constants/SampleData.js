@@ -198,3 +198,24 @@ export const sampleMessage = [
 
   
 ];
+
+export const dashboardData = {
+  user: [
+    {
+      _id: "1",
+      name: "Jhon Doe",
+      avatar: "https://www.w3schools.com/howto/img_avatar.png",
+      username: "jhon",
+      friends: 30,
+      groups: 4
+    },
+    {
+      _id: "2",
+      name: "Bhon Doe",
+      avatar: "https://www.w3schools.com/howto/img_avatar.png",
+      username: "bhon",
+      friends: 20,
+      groups: 1
+    }
+  ]
+}

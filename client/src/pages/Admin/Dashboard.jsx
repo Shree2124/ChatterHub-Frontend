@@ -8,7 +8,6 @@ import {
   Message,
   Notifications,
   Person,
-  Widgets,
 } from "@mui/icons-material";
 import moment from "moment";
 import {
@@ -32,7 +31,7 @@ const Dashboard = () => {
           <AdminPanelSettings sx={{ fontSize: "2.5rem" }} />
           <SearchField type="text" placeholder="Search..." />
           <CurveButton>Search</CurveButton>
-          <Box flexGrow={1}>ds</Box>
+          <Box flexGrow={1}></Box>
           <Typography
             display={{
               xs: "none",
@@ -51,11 +50,16 @@ const Dashboard = () => {
     <Stack
       direction={{
         xs: "column",
-        sm: "row",
+        lg: "row",
       }}
       spacing={"2rem"}
       justifyContent={"space-between"}
-      alignItems={"center"}
+      alignItems={
+        {
+          xs: "center",
+          lg: "stretch"
+        }
+      }
       margin={"2rem 0"}
     >
       <Widget title={"Users"} value={34} icon={<Person />} />
@@ -69,7 +73,10 @@ const Dashboard = () => {
       <Container component={"main"}>
         {AppBar}
 
-        <Stack direction={"row"} spacing={"4rem"} flexWrap={"wrap"}>
+        <Stack direction={{
+          xs: "column",
+          sm: "row"
+        }} justifyContent={"center"} spacing={"4rem"} flexWrap={"wrap"}>
           <Paper
             elevation={3}
             sx={{
@@ -77,7 +84,6 @@ const Dashboard = () => {
               borderRadius: "1rem",
               width: "100%",
               maxWidth: "45rem",
-              height: "100%",
               marginBottom: "2rem !important",
             }}
           >
