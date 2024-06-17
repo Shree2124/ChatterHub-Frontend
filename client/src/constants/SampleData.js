@@ -195,8 +195,6 @@ export const sampleMessage = [
     chat: "chatId 2",
     createdAt: "2024-02-12T10",
   },
-
-  
 ];
 
 export const dashboardData = {
@@ -207,7 +205,7 @@ export const dashboardData = {
       avatar: "https://www.w3schools.com/howto/img_avatar.png",
       username: "jhon",
       friends: 30,
-      groups: 4
+      groups: 4,
     },
     {
       _id: "2",
@@ -215,7 +213,86 @@ export const dashboardData = {
       avatar: "https://www.w3schools.com/howto/img_avatar.png",
       username: "bhon",
       friends: 20,
-      groups: 1
+      groups: 1,
+    },
+  ],
+  chats: [
+    {
+      name: "A",
+      avatar: ["https://www.w3schools.com/howto/img_avatar.png"],
+      _id: "1",
+      groupChat: false,
+      members: [
+        {
+          _id: "1",
+          avatar: ["https://www.w3schools.com/howto/img_avatar.png","https://www.w3schools.com/howto/img_avatar.png"],
+        },
+        {
+          _id: "2",
+          avatar: "https://www.w3schools.com/howto/img_avatar.png",
+        },
+      ],
+      totalMembers: 2,
+      totalMessages: 23,
+      creator: {
+        name: "J",
+        avatar: "https://www.w3schools.com/howto/img_avatar.png",
+      },
+    },
+    {
+      name: "A",
+      avatar: ["https://www.w3schools.com/howto/img_avatar.png"],
+      _id: "2",
+      groupChat: false,
+      members: [
+        {
+          _id: "1",
+          avatar: "https://www.w3schools.com/howto/img_avatar.png",
+        },
+        {
+          _id: "2",
+          avatar: "https://www.w3schools.com/howto/img_avatar.png",
+        },
+      ],
+      totalMembers: 2,
+      totalMessages: 23,
+      creator: {
+        name: "J",
+        avatar: "https://www.w3schools.com/howto/img_avatar.png",
+      },
+    },
+  ],
+  messages: [
+    {
+      attachments: [],
+      content: "Message from A",
+      _id: "sjdhkdjf",
+      sender: {
+        _id: "user._id",
+        name: "Chaman",
+        avatar: "https://www.w3schools.com/howto/img_avatar.png",
+      },
+      chat: "ChatID",
+      groupChat: false,
+      createdAt: "2024-02-12T10:41:30.6302",
+    },
+    {
+      attachments: [
+        {
+          public_id: "askdflj2",
+          url: "https://www.w3schools.com/howto/img_avatar.png"
+        }
+      ],
+      content: "Message from A",
+      _id: "shdfljs",
+      sender: {
+        _id: "user._id",
+        name: "Magan",
+        avatar: "https://www.w3schools.com/howto/img_avatar.png",
+      },
+      chat: "ChatID",
+      groupChat: false,
+      createdAt: "2024-02-12T10:41:30.6302",
     }
   ]
-}
+};

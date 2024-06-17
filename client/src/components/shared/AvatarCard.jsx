@@ -3,6 +3,7 @@ import React from "react";
 import { transformImage } from "../../lib/features.js";
 
 const AvatarCard = ({ avatar= [], max = 4 }) => {
+  // console.log(avatar);
   return (
     <>
       <Stack direction={"row"} spacing={0.5}>
@@ -11,8 +12,9 @@ const AvatarCard = ({ avatar= [], max = 4 }) => {
         }}>
             <Box height={"3rem"} width={"3rem"}>
             {
-                avatar?.map((src,index)=>(
-                    <Avatar 
+                avatar?.map((src,index)=>{
+                  console.log(src);
+                    return <Avatar 
                     key={Math.random() * 100}
                     src={transformImage(src)}
                     alt={`Avatar ${index}`}
@@ -25,8 +27,9 @@ const AvatarCard = ({ avatar= [], max = 4 }) => {
                             sm: `${index}rem`
                         }
                     }}
-                    />
-                    ))
+                    />}
+                    )
+                  
                 }
         </Box>
         </AvatarGroup>
