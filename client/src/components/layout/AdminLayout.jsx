@@ -31,7 +31,7 @@ const Link = styled(LinkComponent)`
   &:hover {
     color: rgba(0, 0, 0, 0.54);
   }
-`;
+`
 
 const adminTabs = [
   {
