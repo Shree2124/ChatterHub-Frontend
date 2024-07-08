@@ -1,4 +1,5 @@
 import mongoose, { Schema, model } from "mongoose"
+import bcrypt from "bcrypt"
 
 const userSchema = new Schema({
     name: {
@@ -34,3 +35,14 @@ const userSchema = new Schema({
 })
 
 const User = mongoose.models.User || model("User", userSchema)
+
+userSchema.pre("save", async function (next) {
+    try {
+        if (!this.isModified("password")) return next()
+
+        this.password = bcrypt.hash(this.password, 10)
+        next()
+    } catch (error) {
+        next(error)
+    }
+})
