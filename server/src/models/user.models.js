@@ -34,7 +34,7 @@ const userSchema = new Schema({
     timestamps: true
 })
 
-const User = mongoose.models.User || model("User", userSchema)
+export const User = mongoose.models.User || model("User", userSchema)
 
 userSchema.pre("save", async function (next) {
     try {
